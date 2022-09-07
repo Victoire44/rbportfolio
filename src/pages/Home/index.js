@@ -71,7 +71,7 @@ export default function Home(props) {
         return () => {}
     }, [])
 
-    const margins = 100
+    const margins = 0
     const scaler = Math.log1p(document.documentElement.clientWidth / 50) * 4.4
     const initialScroll = {
         x: -margins,
@@ -104,7 +104,7 @@ export default function Home(props) {
             scroll={initialScroll}
             scrollEnabled={props.scrollEnabled}
             reset={props.reset}
-            canvasEnds={{ right: 128 * scaler + margins * 2, bottom: 200 * scaler + margins * 2 }}
+            canvasEnds={{ right: 128 * scaler + margins * 2, bottom: 210 * scaler + margins * 2 }}
             scrollSpeed={55}
             height={"100vh"}
             width={"100%"}
