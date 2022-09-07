@@ -53,7 +53,7 @@ export default function Title() {
             initial={"before"}
             animate={"after"}
         >
-        <div className={`${classes.about} ${classes.typo}`} style={location.pathname === "/home" || location.pathname === "/"? fontStyle2 : fontStyle}>Remi Besse</div>
+        <div className={`${classes.about} ${classes.typo}`} style={location.pathname.startsWith("/home") || location.pathname === "/"? fontStyle2 : fontStyle}>Remi Besse</div>
         </Frame>
     )
 }

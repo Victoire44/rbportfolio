@@ -40,6 +40,7 @@ const useStyles = makeStyles(theme => ({
         lineHeight: 1,
         color: "#000",
         fontSize: "2vw",
+        fontWeight: "bold",
         "@media (max-width: 1020px)": {
             fontSize: "2.5vw",
         },
@@ -72,7 +73,7 @@ const useStyles = makeStyles(theme => ({
             transition: "transform .30s",
         },
         "&:hover:after": {
-            transform: "scale(1)",
+            transform: "scale(0)",
             "@media (pointer: coarse)": {
                 display: "none",
             },
