@@ -66,7 +66,13 @@ export default function Lacoste() {
                 />
             </motion.div>
             <div className={classes.caption}>
-                <Typography>Lacoste</Typography>
+                <Typography>Lacoste « EAU FRAICHE »</Typography>
+                <Typography>Director Remi Besse</Typography>
+                <Typography>Production Iconoclast</Typography>
+                <Typography>Agency Publicis Luxe</Typography>
+                <Typography>Dop Paul Ozgur</Typography>
+                <Typography>Chorégraphe Kevin Bagot</Typography>
+                <Typography>Set Design Lucie Beauvert</Typography>
             </div>
         </motion.div>
     )

@@ -8,7 +8,7 @@ export default function Street() {
     const classes = Css()
 
     return (
-        <CanvasItem top={83} left={10} width={24} scrollSpeed={8} className={classes.item}>
+        <CanvasItem top={83} left={8} width={24} scrollSpeed={8} className={classes.item}>
             <Image src={street} alt="Streets" className={classes.cover}/>
         </CanvasItem>
     )

@@ -8,7 +8,7 @@ export default function PsgJordan() {
     const classes = Css()
 
     return (
-        <CanvasItem top={68} left={66} width={21} scrollSpeed={10} className={classes.item}>
+        <CanvasItem top={68} left={64} width={22} scrollSpeed={10} className={classes.item}>
             <Image src={psgJordan} alt="PSG Jordan" className={classes.cover}/>
         </CanvasItem>
     )

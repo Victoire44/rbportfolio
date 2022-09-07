@@ -26,7 +26,7 @@ export function FacesItem() {
                 <Image src={faces} alt="Faces" layoutId="project-image-faces"/>
                 <ImageTitle
                     isHover={isHover}
-                    title="Face"
+                    title="Faces"
                     top="80%"
                     left="58%"
                     topHover="80%"

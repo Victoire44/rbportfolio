@@ -8,12 +8,18 @@ import Item from "../../Item"
 import Image from "../../Image"
 import ImageTitle from "../ImageTitle"
 import adidas from "./assets/adidas.jpg"
+import adidas2 from "./assets/adidas2.jpg"
+import adidas3 from "./assets/adidas3.jpg"
+import Gallery from "../../Gallery"
+import GalleryItem from "../../GalleryItem"
+import CamCursor from "../../Cursor/CamCursor"
+import adidas1 from "./assets/adidas.mp4"
 
 export function AdidasItem() {
     const [isHover, setIsHover] = useState(false)
 
     return (
-        <Item id="adidas" top={30} left={33} width={33} fontSize={1.5} scrollSpeed={13}>
+        <Item id="adidas" top={34} left={33} width={33} fontSize={1.5} scrollSpeed={13}>
             <motion.div layoutId="project-container-adidas"
                 onPointerOver={() => setIsHover(true)}
                 onPointerOut={() => setIsHover(false)}
@@ -44,22 +50,55 @@ export default function Adidas() {
 
     return (
         <motion.div layoutId="project-container-adidas">
-            <motion.div layoutId="project-image-adidas"
-                className={classes.videoWrapper}
-                onPointerOver={handlePointerOverVideo}
-            >
-                <ReactPlayer
-                    url="https://vimeo.com/530203240"
-                    controls
-                    playing
-                    loop
-                    height="auto"
-                    width="auto"
-                />
-            </motion.div>
-            <div className={classes.caption}>
-                <Typography>Adidas forever</Typography>
-            </div>
+            <Gallery>
+                {/* <GalleryItem><motion.div layoutId="project-image-adidas"
+                    className={classes.videoWrapper}
+                    onPointerOver={handlePointerOverVideo}
+                    onMouseOut={() => setCursor(CamCursor("close"))}
+                >
+                    <ReactPlayer
+                        url="https://vimeo.com/530203240"
+                        controls
+                        playing
+                        loop
+                        height="auto"
+                        width="auto"
+                    />
+                    <div className={classes.caption}>
+                        <Typography>Adidas originals « FOREVER »</Typography>
+                        <Typography>Director Remi Besse</Typography>
+                        <Typography>Production Iconoclast</Typography>
+                        <Typography>Starring Adèle Exarchopoulos, Lous & the Yakuza, Dinos</Typography>
+                    </div>
+                </motion.div></GalleryItem> */}
+                <GalleryItem
+                    layoutId="project-image-adidas"
+                    onPointerOver={handlePointerOverVideo}
+                    onPointerOut={() => setCursor(CamCursor("close"))}
+
+                >
+                    <div>
+                        <ReactPlayer
+                            url={adidas1}
+                            type="video/mp4"
+                            playsinline
+                            controls
+                            playing
+                            loop
+                            width="100%"
+                            height="auto"
+                        />
+                        <div className={classes.caption}>
+                            <Typography>Adidas originals « FOREVER »</Typography>
+                            <Typography>Director Remi Besse</Typography>
+                            <Typography>Production Iconoclast</Typography>
+                            <Typography>Starring Adèle Exarchopoulos, Lous & the Yakuza, Dinos</Typography>
+                        </div>
+                    </div>
+                </GalleryItem>
+                <GalleryItem><img src={adidas2} alt="Adidas" /></GalleryItem>
+                <GalleryItem><img src={adidas3} alt="Adidas" /></GalleryItem>
+            </Gallery>
         </motion.div>
     )
 }

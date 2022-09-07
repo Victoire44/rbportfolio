@@ -16,7 +16,7 @@ export function EtudesItem() {
     const [isHover, setIsHover] = useState(false)
 
     return (
-        <Item id="etudes" top={0} left={57} width={20} fontSize={1.5} scrollSpeed={13}>
+        <Item id="etudes" top={5} left={50} width={20} fontSize={1.5} scrollSpeed={13}>
             <motion.div layoutId="project-container-etudes"
                 onPointerOver={() => setIsHover(true)}
                 onPointerOut={() => setIsHover(false)}

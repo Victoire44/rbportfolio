@@ -100,12 +100,12 @@ export default function Nav(props) {
     return (
         <div className={classes.menu}>
             <Link to="/about">
-                <Typography className={`${classes.about} ${classes.typo}`} style={location.pathname === "/home" || location.pathname === "/"? fontStyle2 : fontStyle}>About</Typography>
+                <Typography className={`${classes.about} ${classes.typo}`} style={location.pathname.startsWith("/home") || location.pathname === "/"? fontStyle2 : fontStyle}>About</Typography>
             </Link>
             <Link to={{ pathname: "/home" }}
                 onPointerDown={() => props.setResetScroll(true)}
                 onPointerUp={() => props.setResetScroll(false)}>
-                <Typography className={`${classes.home} ${classes.typo}`} style={location.pathname === "/home" || location.pathname === "/" ? fontStyle2 : fontStyle}>Home</Typography>
+                <Typography className={`${classes.home} ${classes.typo}`} style={location.pathname.startsWith("/home") || location.pathname === "/" ? fontStyle2 : fontStyle}>Home</Typography>
             </Link>
         </div>
     )

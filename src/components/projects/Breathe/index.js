@@ -1,5 +1,6 @@
 import React, { useContext, useState } from "react"
 import ReactPlayer from "react-player"
+import { makeStyles } from "@material-ui/core/styles"
 import { motion } from "framer-motion"
 import { Typography } from "@material-ui/core"
 import Css from "../Css.js"
@@ -9,11 +10,12 @@ import Image from "../../Image"
 import ImageTitle from "../ImageTitle"
 import breathe from "./assets/breathe.jpg"
 
+
 export function BreatheItem() {
     const [isHover, setIsHover] = useState(false)
 
     return (
-        <Item id="breathe" top={4} left={18} width={35} fontSize={1.5} scrollSpeed={6}>
+        <Item id="breathe" top={11} left={6} width={36} fontSize={1.5} scrollSpeed={6}>
             <motion.div layoutId="project-container-breathe"
                 onPointerOver={() => setIsHover(true)}
                 onPointerOut={() => setIsHover(false)}
@@ -54,6 +56,7 @@ export default function Breathe() {
         <motion.div layoutId="project-container-breathe">
             <motion.div layoutId="project-image-breathe"
                 className={classes.videoWrapper}
+                style={{paddingTop: "10%"}}
                 onPointerOver={handlePointerOverVideo}
             >
                 <ReactPlayer
@@ -65,9 +68,12 @@ export default function Breathe() {
                     width="auto"
                 />
             </motion.div>
-            {/* <div className={classes.caption}>
-                <Typography>«Breathe»</Typography>
-            </div> */}
+            <div className={classes.caption}>
+                <Typography>Kaytranada+Idk « BREATHE »</Typography>
+                <Typography>Director Remi Besse</Typography>
+                <Typography>Production Iconoclast</Typography>
+                <Typography>Dop Andre Chemetoff</Typography>
+            </div>
         </motion.div>
     )
 }
