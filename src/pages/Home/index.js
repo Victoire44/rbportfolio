@@ -1,40 +1,15 @@
 import React, { useState, useEffect } from "react"
+import { makeStyles } from "@material-ui/core/styles"
 import CanvasScroll from "../../components/CanvasScroll"
-// import VideoIntro from "../../components/projects/VideoIntro"
 import { AdidasItem } from "../../components/projects/Adidas"
 import { OverallItem } from "../../components/projects/Overall"
 import { BreatheItem } from "../../components/projects/Breathe"
 import { EtudesItem } from "../../components/projects/Etudes"
-// import { StreetsItem } from "../../components/projects/Streets"
 import { FacesItem } from "../../components/projects/Faces"
-// import { ComplexItem } from "../../components/projects/Complex"
-// import { GiveAFuckItem } from "../../components/projects/GiveAFuck"
-// import { BudweiserItem } from "../../components/projects/Budweiser"
-// import { HavanaItem } from "../../components/projects/Havana"
-// import { AccorHotelsItem } from "../../components/projects/AccorHotels"
-// import { VladimirItem } from "../../components/projects/Vladimir"
-// import { LeConsulatItem } from "../../components/projects/LeConsulat"
-// import { OboyItem } from "../../components/projects/Oboy"
-// import { NikeItem } from "../../components/projects/Nike"
-// import { SdmItem } from "../../components/projects/Sdm"
-// import { IchonItem } from "../../components/projects/Ichon"
-// import { GirlItem } from "../../components/projects/Girl"
-// import { PrintItem } from "../../components/projects/Print"
-// import { Stylist1Item } from "../../components/projects/Stylist1"
-// import { Stylist2Item } from "../../components/projects/Stylist2"
-// import { YeuxItem } from "../../components/projects/Yeux"
 import { MoleskineItem } from "../../components/projects/Moleskine"
 import { RasItem } from "../../components/projects/Ras"
 import { LalaItem } from "../../components/projects/Lala"
 import { LacosteItem } from "../../components/projects/Lacoste"
-
-// import Cavani from "../../components/projects/Cavani"
-// import Blue from "../../components/projects/Blue"
-// import Filter from "../../components/projects/Filter"
-// import Collage from "../../components/projects/Collage"
-// import Ofr from "../../components/projects/Ofr"
-// import Offset from "../../components/projects/Offset"
-// import We from "../../components/projects/We"
 import Koba from "../../components/projects/Koba"
 import Child from "../../components/projects/Child"
 import Gradient from "../../components/projects/Gradient"
@@ -54,8 +29,8 @@ import Complex1 from "../../components/projects/Complex1"
 import Scald from "../../components/projects/Scald"
 import Red from "../../components/projects/Red"
 import Vimsml from "../../components/projects/Vimsml"
-import PsgJordan  from "../../components/projects/PsgJordan"
-
+import PsgJordan from "../../components/projects/PsgJordan"
+import background from "./assets/background.jpg"
 import { motion } from "framer-motion"
 
 function useForceUpdate() {
@@ -63,12 +38,32 @@ function useForceUpdate() {
     return () => setValue(value => ++value)
 }
 
+const useStyles = makeStyles(theme => ({
+    background: {
+        backgroundImage: `url(${background})`,
+        backgroundSize: "100% 100%",
+        // height: "110%",
+        // width: "110%",
+        position: "absolute",
+        top: "-50vh",
+        bottom: "-50vh",
+        left: "-50vw",
+        right: "-50vw",
+        // padding: 0,
+        // margin: 0,
+        // boxSizing: "border-box",
+        // overflow: "hidden",
+    }
+}))
+
 export default function Home(props) {
     const forceUpdate = useForceUpdate()
+    const classes = useStyles()
 
     useEffect(() => {
         window.addEventListener('resize', forceUpdate)
-        return () => {}
+        return () => {
+        }
     }, [])
 
     const margins = 0
@@ -108,9 +103,11 @@ export default function Home(props) {
             scrollSpeed={55}
             height={"100vh"}
             width={"100%"}
+            background={background}
         >
+            <div className={classes.background}></div>
             <div style={{ position: "relative", top: margins, left: margins }}>
-            <motion.div position={"relative"} size={"100%"}
+                <motion.div position={"relative"} size={"100%"}
                     variants={variants}
                     initial="in"
                     animate="animate"
@@ -243,7 +240,7 @@ export default function Home(props) {
                     exit="out"
                     transition={{ duration: 1.6, ease: "easeOut" }}
                 >
-                    <Portrait/>
+                    <Portrait />
                 </motion.div>
                 <motion.div position={"relative"} size={"100%"}
                     variants={variants}
@@ -307,7 +304,7 @@ export default function Home(props) {
                     transition={{ duration: 1.2, ease: "easeOut" }}
                 >
                     <Koba />
-                </motion.div> 
+                </motion.div>
                 <motion.div position={"relative"} size={"100%"}
                     variants={variants}
                     initial="in"
@@ -316,7 +313,7 @@ export default function Home(props) {
                     transition={{ duration: 1.35, ease: "easeOut" }}
                 >
                     <City />
-                </motion.div> 
+                </motion.div>
                 <motion.div position={"relative"} size={"100%"}
                     variants={variants}
                     initial="in"
@@ -325,7 +322,7 @@ export default function Home(props) {
                     transition={{ duration: 1.1, ease: "easeOut" }}
                 >
                     <LacosteItem />
-                </motion.div> 
+                </motion.div>
                 <motion.div position={"relative"} size={"100%"}
                     variants={variants}
                     initial="in"
@@ -334,7 +331,7 @@ export default function Home(props) {
                     transition={{ duration: 1.5, ease: "easeOut" }}
                 >
                     <Complex1 />
-                </motion.div> 
+                </motion.div>
                 <motion.div position={"relative"} size={"100%"}
                     variants={variants}
                     initial="in"
@@ -343,7 +340,7 @@ export default function Home(props) {
                     transition={{ duration: 1.2, ease: "easeOut" }}
                 >
                     <Scald />
-                </motion.div> 
+                </motion.div>
                 <motion.div position={"relative"} size={"100%"}
                     variants={variants}
                     initial="in"
@@ -361,7 +358,7 @@ export default function Home(props) {
                     transition={{ duration: 1.1, ease: "easeOut" }}
                 >
                     <Lacoste1 />
-                </motion.div> 
+                </motion.div>
                 <motion.div position={"relative"} size={"100%"}
                     variants={variants}
                     initial="in"
@@ -371,224 +368,6 @@ export default function Home(props) {
                 >
                     <Trot />
                 </motion.div>
-                {/* <motion.div position={"relative"} size={"100%"}
-                    variants={variants}
-                    initial="in"
-                    animate="animate"
-                    exit="out"
-                    transition={{ duration: 0.55, ease: "easeOut" }}
-                >
-                    <StreetsItem />
-                </motion.div>
-                <motion.div position={"relative"} size={"100%"}
-                    variants={variants}
-                    initial="in"
-                    animate="animate"
-                    exit="out"
-                    transition={{ duration: 0.6, ease: "easeOut" }}
-                >
-                    <ComplexItem />
-                </motion.div>
-                <motion.div position={"relative"} size={"100%"}
-                    variants={variants}
-                    initial="in"
-                    animate="animate"
-                    exit="out"
-                    transition={{ duration: 0.25, ease: "easeOut" }}
-                >
-                    <GiveAFuckItem />
-                </motion.div>
-                <motion.div position={"relative"} size={"100%"}
-                    variants={variants}
-                    initial="in"
-                    animate="animate"
-                    exit="out"
-                    transition={{ duration: 0.4, ease: "easeOut" }}
-                >
-                    <BudweiserItem />
-                </motion.div>
-                <motion.div position={"relative"} size={"100%"}
-                    variants={variants}
-                    initial="in"
-                    animate="animate"
-                    exit="out"
-                    transition={{ duration: 0.5, ease: "easeOut" }}
-                >
-                    <LeConsulatItem />
-                </motion.div>
-                <motion.div position={"relative"} size={"100%"}
-                    variants={variants}
-                    initial="in"
-                    animate="animate"
-                    exit="out"
-                    transition={{ duration: 0.55, ease: "easeOut" }}
-                >
-                    <HavanaItem />
-                </motion.div>
-                <motion.div position={"relative"} size={"100%"}
-                    variants={variants}
-                    initial="in"
-                    animate="animate"
-                    exit="out"
-                    transition={{ duration: 0.3, ease: "easeOut" }}
-                >
-                    <AccorHotelsItem />
-                </motion.div>
-                <motion.div position={"relative"} size={"100%"}
-                    variants={variants}
-                    initial="in"
-                    animate="animate"
-                    exit="out"
-                    transition={{ duration: 0.6, ease: "easeOut" }}
-                >
-                    <SdmItem />
-                </motion.div>
-                <motion.div position={"relative"} size={"100%"}
-                    variants={variants}
-                    initial="in"
-                    animate="animate"
-                    exit="out"
-                    transition={{ duration: 0.35, ease: "easeOut" }}
-                >
-                    <Stylist1Item />
-                </motion.div>
-                <motion.div position={"relative"} size={"100%"}
-                    variants={variants}
-                    initial="in"
-                    animate="animate"
-                    exit="out"
-                    transition={{ duration: 0.6, ease: "easeOut" }}
-                >
-                    <PrintItem />
-                </motion.div>
-                <motion.div position={"relative"} size={"100%"}
-                    variants={variants}
-                    initial="in"
-                    animate="animate"
-                    exit="out"
-                    transition={{ duration: 0.85, ease: "easeOut" }}
-                >
-                    <Cavani />
-                </motion.div>
-                <motion.div position={"relative"} size={"100%"}
-                    variants={variants}
-                    initial="in"
-                    animate="animate"
-                    exit="out"
-                    transition={{ duration: 1, ease: "easeOut" }}
-                >
-                    <Blue />
-                </motion.div>
-              
-                <motion.div position={"relative"} size={"100%"}
-                    variants={variants}
-                    initial="in"
-                    animate="animate"
-                    exit="out"
-                    transition={{ duration: 0.25, ease: "easeOut" }}
-                >
-                    <Stylist2Item />
-                </motion.div>
-                <motion.div position={"relative"} size={"100%"}
-                    variants={variants}
-                    initial="in"
-                    animate="animate"
-                    exit="out"
-                    transition={{ duration: 0.23, ease: "easeOut" }}
-                >
-                    <Filter />
-                </motion.div>
-                <motion.div position={"relative"} size={"100%"}
-                    variants={variants}
-                    initial="in"
-                    animate="animate"
-                    exit="out"
-                    transition={{ duration: 0.14, ease: "easeOut" }}
-                >
-                    <Collage />
-                </motion.div>
-                <motion.div position={"relative"} size={"100%"}
-                    variants={variants}
-                    initial="in"
-                    animate="animate"
-                    exit="out"
-                    transition={{ duration: 0.4, ease: "easeOut" }}
-                >
-                    <YeuxItem />
-                </motion.div>
-                <motion.div position={"relative"} size={"100%"}
-                    variants={variants}
-                    initial="in"
-                    animate="animate"
-                    exit="out"
-                    transition={{ duration: 0.1, ease: "easeOut" }}
-                >
-                    <IchonItem />
-                </motion.div>
-                <motion.div position={"relative"} size={"100%"}
-                    variants={variants}
-                    initial="in"
-                    animate="animate"
-                    exit="out"
-                    transition={{ duration: 0.3, ease: "easeOut" }}
-                >
-                    <Ofr />
-                </motion.div>
-                <motion.div position={"relative"} size={"100%"}
-                    variants={variants}
-                    initial="in"
-                    animate="animate"
-                    exit="out"
-                    transition={{ duration: 0.22, ease: "easeOut" }}
-                >
-                    <We />
-                </motion.div>
-                <motion.div position={"relative"} size={"100%"}
-                    variants={variants}
-                    initial="in"
-                    animate="animate"
-                    exit="out"
-                    transition={{ duration: 0.15, ease: "easeOut" }}
-                >
-                    <Offset />
-                </motion.div>
-                <motion.div position={"relative"} size={"100%"}
-                    variants={variants}
-                    initial="in"
-                    animate="animate"
-                    exit="out"
-                    transition={{ duration: 0.35, ease: "easeOut" }}
-                >
-                    <GirlItem />
-                </motion.div>
-                <motion.div position={"relative"} size={"100%"}
-                    variants={variants}
-                    initial="in"
-                    animate="animate"
-                    exit="out"
-                    transition={{ duration: 0.25, ease: "easeOut" }}
-                >
-                    <VladimirItem />
-                </motion.div>
-                <motion.div position={"relative"} size={"100%"}
-                    variants={variants}
-                    initial="in"
-                    animate="animate"
-                    exit="out"
-                    transition={{ duration: 0.45, ease: "easeOut" }}
-                >
-                    <OboyItem />
-                </motion.div>
-                <motion.div position={"relative"} size={"100%"}
-                    variants={variants}
-                    initial="in"
-                    animate="animate"
-                    exit="out"
-                    transition={{ duration: 0.30, ease: "easeOut" }}
-                >
-                    <NikeItem />
-                </motion.div>
-               */}
             </div>
         </CanvasScroll>
     )
