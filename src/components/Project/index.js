@@ -5,36 +5,15 @@ import { CursorContext } from "../Cursor"
 import CamCursor from "../Cursor/CamCursor"
 import IconClose from "./assets/close-cursor.svg"
 import { motion } from "framer-motion"
-import Adidas from "../projects/Adidas"
-import Streets from "../projects/Streets"
-import Faces from "../projects/Faces"
-import Complex from "../projects/Complex"
-import GiveAFuck from "../projects/GiveAFuck"
-import AccorHotels from "../projects/AccorHotels"
-import Budweiser from "../projects/Budweiser"
-import Havana from "../projects/Havana"
-import LeConsulat from "../projects/LeConsulat"
-import Vladimir from "../projects/Vladimir"
-import Oboy from "../projects/Oboy"
-import Sdm from "../projects/Sdm"
-import Nike from "../projects/Nike"
-import Ichon from "../projects/Ichon"
-import Girl from "../projects/Girl"
-import Red from "../projects/Red"
-import Print from "../projects/Print"
-import Stylist1 from "../projects/Stylist1"
-import Stylist2 from "../projects/Stylist2"
-import Vimsml from "../projects/Vimsml"
-import PsgJordan from "../projects/PsgJordan"
-import Yeux from "../projects/Yeux"
-import Cavani from "../projects/Cavani"
 import Breathe from "../projects/Breathe"
 import Etudes from "../projects/Etudes"
-import Overall from "../projects/Overall"
+import Adidas from "../projects/Adidas"
 import Moleskine from "../projects/Moleskine"
-import Ras from "../projects/Ras"
-import Lala from "../projects/Lala"
 import Lacoste from "../projects/Lacoste"
+import Lala from "../projects/Lala"
+import Ras from "../projects/Ras"
+import Overall from "../projects/Overall"
+import Faces from "../projects/Faces"
 
 
 const useStyles = makeStyles({
@@ -75,38 +54,15 @@ const useStyles = makeStyles({
 })
 
 const projects = {
-    adidas: <Adidas />,
-    streets: <Streets />,
-    faces: <Faces />,
-    complex: <Complex />,
-    giveAFuck: <GiveAFuck />,
-    accorHotels: <AccorHotels />,
-    budweiser: <Budweiser />,
-    havana: <Havana />,
-    leconsulat: <LeConsulat />,
-    vladimir: <Vladimir />,
-    oboy: <Oboy />,
-    sdm: <Sdm />,
-    nike: <Nike />,
-    ichon: <Ichon />,
-    girl: <Girl />,
-    red: <Red />,
-    print: <Print />,
-    stylist1: <Stylist1 />,
-    stylist: <Stylist2 />,
-    vimsml: <Vimsml />,
-    psgJordan: <PsgJordan />,
-    yeux: <Yeux />,
-    cavini: <Cavani />,
     breathe: <Breathe />,
     etudes: <Etudes />,
-    overall: <Overall />,
+    adidas: <Adidas />,
     moleskine: <Moleskine />,
-    ras: <Ras />,
+    lacoste: <Lacoste />,
     lala: <Lala />,
-    lacoste: <Lacoste />
-
-
+    ras: <Ras />,
+    overall: <Overall />,
+    faces: <Faces />
 }
 
 export default function Project({ id }) {

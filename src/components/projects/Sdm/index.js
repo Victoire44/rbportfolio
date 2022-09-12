@@ -1,70 +1,16 @@
-import React, { useContext, useState } from "react"
+import React from "react"
+import CanvasItem from "../../CanvasItem"
+import Css from "../Css.js"
+import sdm from "./assets/sdm.mp4"
 import { motion } from "framer-motion"
-import CamCursor from "../../Cursor/CamCursor"
-import Gallery from "../../Gallery"
-import GalleryItem from "../../GalleryItem"
-import Item from "../../Item"
-import Image from "../../Image"
-import ImageTitle from "../ImageTitle"
-import sdmVideo from "./assets/sdmVideo.mp4"
-import sdm from "./assets/sdm.jpg"
-import sdm1 from "./assets/sdm1.jpg"
-import sdm2 from "./assets/sdm2.jpg"
-import { CursorContext } from "../../Cursor"
-
-export function SdmItem() {
-    const [isHover, setIsHover] = useState(false)
-
-    return (
-        <Item id="sdm" top={8} left={120} width={22} fontSize={2.5} scrollSpeed={14}>
-            <motion.div layoutId="project-container-sdm"
-                onPointerOver={() => setIsHover(true)}
-                onPointerOut={() => setIsHover(false)}
-                onPointerUp={() => setIsHover(false)}
-            >
-                <Image src={sdm} alt="SDM" layoutId="project-image-sdm" />
-                <ImageTitle
-                    isHover={isHover}
-                    title="SDM"
-                    top="55%"
-                    left="55%"
-                    topHover="55%"
-                    leftHover="45%"
-                />
-            </motion.div>
-        </Item>
-    )
-}
 
 export default function Sdm() {
-    const setCursor = useContext(CursorContext)
-
-    const handlePointerOverVideo = e => {
-        e.stopPropagation()
-        setCursor(undefined)
-    }
+    const classes = Css()
 
     return (
-        <motion.div layoutId="project-container-sdm">
-            <Gallery>
-            <GalleryItem
-                    layoutId="project-image-sdm"
-                    onMouseOver={handlePointerOverVideo}
-                    onMouseOut={() => setCursor(CamCursor("close"))}
-                >
-                    <video width="fill-available" height="fill-available"
-                        controls
-                        autoPlay
-                        playsinline
-                        loop>
-                        <source src={sdmVideo} type="video/mp4" />
-                        Your browser does not support the video tag.
-                    </video>
-                </GalleryItem>
-                <GalleryItem><img src={sdm1} alt="SDM" /></GalleryItem>
-                <GalleryItem><img src={sdm2} alt="SDM" /></GalleryItem>
-            </Gallery>
-        </motion.div>
+        <CanvasItem top={155} left={13} width={20} height={30} scrollSpeed={9} className={classes.item}>
+            <motion.video src={sdm} type="video/mp4" autoPlay muted loop className={`${classes.video} ${classes.cover}`}/>
+        </CanvasItem>
     )
 }
 

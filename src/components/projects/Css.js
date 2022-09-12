@@ -2,21 +2,15 @@ import { makeStyles } from "@material-ui/core/styles"
 
 const Css = makeStyles(theme => ({
     /*Home Page*/
-    // item: {
-    //     "&:hover": {
-    //         zIndex: 1000,
-    //     }
-    // },
-    // cover: {
-    //     opacity: .7,
-    //     "&:hover": {
-    //         opacity: 1,
-    //     }
-    // },
-    coverScale: {
+    item: {
+        "&:hover": {
+        zIndex: 1000,
+        }
+     },
+    cover: {
         transition: "all 0.5s",
         "&:hover": {
-            transform: "scale(1.04)"
+            transform: "scale(1.04)",
         }
     },
     positionImage: {

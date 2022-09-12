@@ -16,16 +16,16 @@ import Gradient from "../../components/projects/Gradient"
 import Yellow from "../../components/projects/Yellow"
 import Palace from "../../components/projects/Palace"
 import Gold from "../../components/projects/Gold"
-import Portrait from "../../components/projects/Portrait"
+import Oboy from "../../components/projects/Oboy"
 import Gato from "../../components/projects/Gato"
 import Street from "../../components/projects/Street"
-import Street1 from "../../components/projects/Street1"
-import Sdm1 from "../../components/projects/Sdm1"
+import Belleville from "../../components/projects/Belleville"
+import Sdm from "../../components/projects/Sdm"
 import Intro from "../../components/projects/Intro"
 import Trot from "../../components/projects/Trot"
 import City from "../../components/projects/City"
 import Lacoste1 from "../../components/projects/Lacoste1"
-import Complex1 from "../../components/projects/Complex1"
+import Complex from "../../components/projects/Complex"
 import Scald from "../../components/projects/Scald"
 import Red from "../../components/projects/Red"
 import Vimsml from "../../components/projects/Vimsml"
@@ -42,17 +42,11 @@ const useStyles = makeStyles(theme => ({
     background: {
         backgroundImage: `url(${background})`,
         backgroundSize: "100% 100%",
-        // height: "110%",
-        // width: "110%",
         position: "absolute",
         top: "-50vh",
         bottom: "-50vh",
         left: "-50vw",
-        right: "-50vw",
-        // padding: 0,
-        // margin: 0,
-        // boxSizing: "border-box",
-        // overflow: "hidden",
+        right: "-50vw"
     }
 }))
 
@@ -240,7 +234,7 @@ export default function Home(props) {
                     exit="out"
                     transition={{ duration: 1.6, ease: "easeOut" }}
                 >
-                    <Portrait />
+                    <Oboy />
                 </motion.div>
                 <motion.div position={"relative"} size={"100%"}
                     variants={variants}
@@ -267,7 +261,7 @@ export default function Home(props) {
                     exit="out"
                     transition={{ duration: 1.3, ease: "easeOut" }}
                 >
-                    <Street1 />
+                    <Belleville />
                 </motion.div>
                 <motion.div position={"relative"} size={"100%"}
                     variants={variants}
@@ -294,7 +288,7 @@ export default function Home(props) {
                     exit="out"
                     transition={{ duration: 1.1, ease: "easeOut" }}
                 >
-                    <Sdm1 />
+                    <Sdm />
                 </motion.div>
                 <motion.div position={"relative"} size={"100%"}
                     variants={variants}
@@ -330,7 +324,7 @@ export default function Home(props) {
                     exit="out"
                     transition={{ duration: 1.5, ease: "easeOut" }}
                 >
-                    <Complex1 />
+                    <Complex />
                 </motion.div>
                 <motion.div position={"relative"} size={"100%"}
                     variants={variants}

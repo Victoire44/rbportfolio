@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import { makeStyles } from "@material-ui/core/styles"
 import { Route, Switch, useLocation } from "react-router-dom"
 import { Helmet } from "react-helmet"
@@ -12,7 +12,6 @@ import CursorProvider from "./components/Cursor"
 import "bootstrap/dist/css/bootstrap.min.css"
 import Favicon from "./favicon.png"
 import { AnimatePresence, AnimateSharedLayout } from "framer-motion"
-import background from "./background.jpg"
 
 const darkTheme = createMuiTheme({
     palette: {
@@ -22,18 +21,15 @@ const darkTheme = createMuiTheme({
 
 const useStyles = makeStyles(theme => ({
     body: {
-        backgroundImage:`url(${background})`,
-        backgroundSize: "100% 100%",
-        height: "100vh",
-        padding: 0,
-        margin: 0,
         boxSizing: "border-box",
         overflow: "hidden",
+        padding: 0,
+        margin: 0,
     }
 }))
 
 export default function App() {
-    const [resetScroll, setResetScroll] = useState(false)
+    const [resetScroll, setResetScroll] = useState(false)   
     const location = useLocation()
     const lastSlash = location.pathname.indexOf("/", 1)
     const page = location.pathname.substring(0, lastSlash === -1 ? location.pathname.length : lastSlash).replace("/home", "/")
