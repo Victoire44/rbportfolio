@@ -18,7 +18,7 @@ export default function Image(props) {
 
     return (
         <div className={classes.root}>
-            <motion.img {...props} onContextMenu={e => e.preventDefault()}/>
+            <motion.img {...props} onContextMenu={e => e.preventDefault()} loading="lazy"/>
         </div>
     )
 }
