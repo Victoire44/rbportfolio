@@ -37,29 +37,28 @@ const useStyles = makeStyles(theme => ({
             position: "absolute",
             fontSize: theme.spacing(3.5),
             "&:hover":{
-                fontSize: theme.spacing(3.5 * 1.05)
+                fontSize: theme.spacing(3.5 * 1.10)
             },
             color: "#000",
             transition: "all .2s",
             "@media (max-width: 1000px) and (pointer: coarse)": {
                 fontSize: theme.spacing(3.2),
                 "&:hover":{
-                    fontSize: theme.spacing(3.2 * 1.05)
+                    fontSize: theme.spacing(3.2 * 1.10)
                 },
             },
             "@media (max-width: 640px)": {
                 fontSize: theme.spacing(2.5),
                 "&:hover":{
-                    fontSize: theme.spacing(2.5 * 1.05)
+                    fontSize: theme.spacing(2.5 * 1.10)
                 },
             },
             "@media (max-width: 300px)": {
                 fontSize: theme.spacing(2.2),
                 "&:hover":{
-                    fontSize: theme.spacing(2.2 * 1.05)
+                    fontSize: theme.spacing(2.2 * 1.10)
                 },
             }
-
         }
     },
     typo: {
