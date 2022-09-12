@@ -1,13 +1,10 @@
-import React, {useContext} from "react"
+import React from "react"
 import {Link} from "react-router-dom"
-import {CursorContext} from "./Cursor"
 import Css from "./projects/Css";
-import CamCursor from "./Cursor/CamCursor"
 import CanvasItem from "./CanvasItem";
 
 export default function Item({id, top, left, width, fontSize, scrollSpeed, children}) {
     const classes = Css()
-    const setCursor = useContext(CursorContext)
 
     return (
         <CanvasItem top={top}
@@ -19,10 +16,8 @@ export default function Item({id, top, left, width, fontSize, scrollSpeed, child
         >
             <Link to={`/home/${id}`}
                   key={`item-${id}`}
-                  onPointerOver={() => setCursor(CamCursor("cam"))}
-                  onPointerOut={() => setCursor(CamCursor("initial"))}
             >
-                <div className={`${classes.cover} ${classes.coverScale}`}>
+                <div className={classes.cover}>
                     {children}
                 </div>
             </Link>

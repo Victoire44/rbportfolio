@@ -7,7 +7,7 @@ import aboutBackground from "./assets/aboutbackground.jpg"
 
 const useStyles = makeStyles(theme => ({
     root: {
-        backgroundImage:`url(${aboutBackground})`,
+        backgroundImage: `url(${aboutBackground})`,
         backgroundSize: "100% 100%",
         height: "100vh",
         padding: 0,
@@ -26,7 +26,7 @@ const useStyles = makeStyles(theme => ({
         fontSize: "1.5vw",
         "@media (max-width: 1020px)": {
             fontSize: "2vw",
-        },   
+        },
         "@media (max-width: 640px)": {
             fontSize: "3.6vw",
         },
@@ -50,9 +50,9 @@ const useStyles = makeStyles(theme => ({
         "@media (max-width: 700px) and (orientation: landscape) and (pointer: coarse)": {
             fontSize: "2.3vw",
         },
-     
+
     },
-    marginTop :{
+    marginTop: {
         marginTop: "8%",
     },
     email: {
@@ -71,9 +71,12 @@ const useStyles = makeStyles(theme => ({
             background: "#000",
             transform: "scale(1)",
             transition: "transform .30s",
+            transformOrigin: "bottom left"
+
         },
         "&:hover:after": {
             transform: "scale(0)",
+            transformOrigin: "bottom left",
             "@media (pointer: coarse)": {
                 display: "none",
             },
@@ -155,12 +158,12 @@ export default function About() {
                         <div>Representation</div>
                         <Link href="https://iconoclast.tv/fr/remi-besse" target="_blank" className={classes.link}>ICONOCLAST.TV</Link>
                         <div className={classes.smallTypo}>
-                        <div className={classes.marginTop}>Also run a</div>
-                        <div>collective photo revue</div>
-                        <div>called <Link href="https://scaldconnexion.org/" target="_blank" className={classes.link} style={{display: "inline-block"}}> scald</Link></div>
+                            <div className={classes.marginTop}>Also run a</div>
+                            <div>collective photo revue</div>
+                            <div>called <Link href="https://scaldconnexion.org/" target="_blank" className={classes.link} style={{ display: "inline-block" }}> scald</Link></div>
                         </div>
-                        <Link href="mailto:enquiries@remibesse.com" target="_blank" className={`${classes.email} ${classes.marginTop}`}>
-                        <div>enquiries@remibesse.com</div>
+                        <Link href="mailto:enquiries@remibesse.com" target="_blank" className={`${classes.email} ${classes.marginTop} ${classes.link}`}>
+                            <div>enquiries@remibesse.com</div>
                         </Link>
                         <div className={`${classes.marginTop} ${classes.smallTypo}`}>©2022 Remi Besse</div>
                     </motion.div>

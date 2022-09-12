@@ -63,9 +63,9 @@ export default function CanvasScroll(props) {
                 wheelEnabled={false}
                 dragEnabled={!autoScrollEnabled}
                 onDrag={() => setAutoScrollEnabled(false)}
-                // onScrollStart={info => {
-                //     setScroll({x: info.point.x - 0.000000001, y: info.point.y - 0.000000001})
-                // }}
+                onScrollStart={info => {
+                    setScroll({x: info.point.x - 0.000000001, y: info.point.y - 0.000000001})
+                }}
                 scrollAnimate={scroll}
                 contentOffsetX={initialScroll.x}
                 contentOffsetY={initialScroll.y}
