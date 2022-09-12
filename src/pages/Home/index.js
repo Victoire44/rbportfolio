@@ -30,6 +30,7 @@ import Scald from "../../components/projects/Scald"
 import Red from "../../components/projects/Red"
 import Vimsml from "../../components/projects/Vimsml"
 import PsgJordan from "../../components/projects/PsgJordan"
+import SelfPortrait from "../../components/projects/SelfPortrait"
 import background from "./assets/background.jpg"
 import { motion } from "framer-motion"
 
@@ -101,6 +102,15 @@ export default function Home(props) {
         >
             <div className={classes.background}></div>
             <div style={{ position: "relative", top: margins, left: margins }}>
+                <motion.div position={"relative"} size={"100%"}
+                    variants={variants}
+                    initial="in"
+                    animate="animate"
+                    exit="out"
+                    transition={{ duration: 1.4, ease: "easeOut" }}
+                >
+                    <SelfPortrait />
+                </motion.div>
                 <motion.div position={"relative"} size={"100%"}
                     variants={variants}
                     initial="in"

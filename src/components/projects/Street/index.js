@@ -2,7 +2,7 @@ import React from "react"
 import CanvasItem from "../../CanvasItem"
 import Image from "../../Image"
 import Css from "../Css.js"
-import streets from "./assets/streets.jpg"
+import streets from "./assets/streets.jpeg"
 
 export default function Street1() {
     const classes = Css()

@@ -8,7 +8,7 @@ export default function Sdm() {
     const classes = Css()
 
     return (
-        <CanvasItem top={155} left={13} width={20} height={30} scrollSpeed={9} className={classes.item}>
+        <CanvasItem top={155} left={10} width={20} height={30} scrollSpeed={9} className={classes.item}>
             <motion.video src={sdm} type="video/mp4" autoPlay muted loop className={`${classes.video} ${classes.cover}`}/>
         </CanvasItem>
     )

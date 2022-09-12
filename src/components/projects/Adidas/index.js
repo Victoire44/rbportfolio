@@ -51,26 +51,6 @@ export default function Adidas() {
     return (
         <motion.div layoutId="project-container-adidas">
             <Gallery>
-                {/* <GalleryItem><motion.div layoutId="project-image-adidas"
-                    className={classes.videoWrapper}
-                    onPointerOver={handlePointerOverVideo}
-                    onMouseOut={() => setCursor(CamCursor("close"))}
-                >
-                    <ReactPlayer
-                        url="https://vimeo.com/530203240"
-                        controls
-                        playing
-                        loop
-                        height="auto"
-                        width="auto"
-                    />
-                    <div className={classes.caption}>
-                        <Typography>Adidas originals « FOREVER »</Typography>
-                        <Typography>Director Remi Besse</Typography>
-                        <Typography>Production Iconoclast</Typography>
-                        <Typography>Starring Adèle Exarchopoulos, Lous & the Yakuza, Dinos</Typography>
-                    </div>
-                </motion.div></GalleryItem> */}
                 <GalleryItem
                     layoutId="project-image-adidas"
                     onPointerOver={handlePointerOverVideo}
