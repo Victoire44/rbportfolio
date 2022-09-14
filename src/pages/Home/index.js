@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react"
-import { makeStyles } from "@material-ui/core/styles"
 import CanvasScroll from "../../components/CanvasScroll"
 import { AdidasItem } from "../../components/projects/Adidas"
 import { OverallItem } from "../../components/projects/Overall"
@@ -31,29 +30,18 @@ import Red from "../../components/projects/Red"
 import Vimsml from "../../components/projects/Vimsml"
 import PsgJordan from "../../components/projects/PsgJordan"
 import SelfPortrait from "../../components/projects/SelfPortrait"
-import background from "./assets/background.jpg"
 import { motion } from "framer-motion"
+import CanvasItem from "../../components/CanvasItem"
+import Background from "../../components/Background"
+import Image from "../../components/Image"
 
 function useForceUpdate() {
     const [, setValue] = useState(0)
     return () => setValue(value => ++value)
 }
 
-const useStyles = makeStyles(theme => ({
-    background: {
-        backgroundImage: `url(${background})`,
-        backgroundSize: "100% 100%",
-        position: "absolute",
-        top: "-50vh",
-        bottom: "-50vh",
-        left: "-50vw",
-        right: "-50vw"
-    }
-}))
-
 export default function Home(props) {
     const forceUpdate = useForceUpdate()
-    const classes = useStyles()
 
     useEffect(() => {
         window.addEventListener('resize', forceUpdate)
@@ -97,10 +85,9 @@ export default function Home(props) {
             canvasEnds={{ right: 128 * scaler + margins * 2, bottom: 210 * scaler + margins * 2 }}
             scrollSpeed={55}
             height={"100vh"}
-            width={"100%"}
-            background={background}
+            width={"100vw"}
         >
-            <div className={classes.background}></div>
+            <Background scrollSpeed={25}></Background>
             <div style={{ position: "relative", top: margins, left: margins }}>
                 <motion.div position={"relative"} size={"100%"}
                     variants={variants}

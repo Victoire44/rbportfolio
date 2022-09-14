@@ -7,7 +7,19 @@ import { CursorContext } from "../../Cursor"
 import Item from "../../Item"
 import Image from "../../Image"
 import ImageTitle from "../ImageTitle"
+import overallVideo from "./assets/overallVideo.mp4"
 import overall from "./assets/overall.jpg"
+import { makeStyles } from "@material-ui/core/styles"
+
+
+const useStyles = makeStyles(theme => ({
+videoWrapper: {
+    width: "65vw",
+    "@media (max-width: 600px)": {
+        width: "100vw",
+    }
+}
+}))
 
 export function OverallItem() {
     const [isHover, setIsHover] = useState(false)
@@ -34,7 +46,9 @@ export function OverallItem() {
 }
 
 export default function Overall() {
+    const style = useStyles()
     const classes = Css()
+
     const setCursor = useContext(CursorContext)
 
     const handlePointerOverVideo = e => {
@@ -45,16 +59,18 @@ export default function Overall() {
     return (
         <motion.div layoutId="project-container-overall">
             <motion.div layoutId="project-image-overall"
-                className={classes.videoWrapper}
+                className={style.videoWrapper}
                 onPointerOver={handlePointerOverVideo}
             >
                 <ReactPlayer
-                    url="https://vimeo.com/741847098"
+                    url={overallVideo}
+                    type="video/mp4"
+                    playsinline
                     controls
                     playing
                     loop
+                    width="100%"
                     height="auto"
-                    width="auto"
                 />
             </motion.div>
             <div className={classes.caption}>
